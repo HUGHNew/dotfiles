@@ -1,0 +1,40 @@
+alias g11='g++ -std=c++11'
+alias g14='g++ -std=c++14'
+alias gcl='git clone'
+alias gll='git pull'
+
+alias Install="sudo apt install"
+alias Update="sudo apt update"
+alias Upgrade="sudo apt upgrade"
+alias Remove="sudo apt remove"
+# Nginx alias
+alias Nginx="sudo nginx"
+
+
+# gitbook init
+alias init="sudo gitbook init"
+alias pdf="sudo gitbook pdf"
+# Docker
+alias Docker="sudo docker"
+alias sicp="rlwrap scheme"
+# inetd : The Telnet Server
+alias inet="sudo /etc/init.d/openbsd-inetd"
+
+# translation CLI
+alias Chinese="trans :zh -no-ansi" # translate to Chinese
+alias English="trans :en -no-ansi" # translate to English
+
+
+host_ip="$(tail -n 1  /etc/resolv.conf|awk '{print $2}')"
+# export ALL_PROXY="http://$host_ip:7890"
+alias setproxy="\
+export all_proxy=http://$host_ip:7890;\
+export http_proxy=http://$host_ip:7890;\
+export https_proxy=http://$host_ip:7890;\
+"
+alias unsetproxy="\
+unset all_proxy;\
+unset http_proxy;\
+unset https_proxy;\
+"
+alias ping="~/prettyping"
