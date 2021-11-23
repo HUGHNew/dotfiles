@@ -1,0 +1,22 @@
+# - defaults:
+#     link:
+#       relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: tmux.conf
+    ~/.vim: vim/vim
+    ~/.vimrc: vim/vimrc
+    ~/.zsh: zsh/zsh
+    ~/.zshrc: 
+      path: zsh/zshrc
+      force: true
+    ~/.bash_aliases: 
+      path: bash/bash_aliases
+      force: true
+    ~/.poshthemes: PoshThemes
+    ~/.config/ibus/rime/:
+      create: true
+      glob: true
+      path: rime/*

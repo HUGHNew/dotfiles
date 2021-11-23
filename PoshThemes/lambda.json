@@ -1,0 +1,127 @@
+{
+    "$schema": "https://raw.githubusercontent.com/HUGHNew/Posh-Prompt/main/schema.json",
+    "final_space": true,
+    "console_title": true,
+    "console_title_style": "template",
+    "console_title_template": "{{.Folder}}",
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "python",
+                    "style": "diamond",
+                    "foreground": "#7a7374",
+                    "properties": {
+                        "prefix": " \uE235 ",
+                        "display_mode": "environment",
+                        "home_enabled":true
+                    }
+                },
+                {
+                    "type": "os",
+                    "style": "diamond",
+                    "foreground": "#9B6BDF",
+                    "properties": {
+                        "alpine": "\uf300",
+                        "arch": "\uf303",
+                        "centos": "\uf304",
+                        "debian": "\uf306",
+                        "elementary": "\uf309",
+                        "fedora": "\uf30a",
+                        "gentoo": "\uf30d",
+                        "linux": "\ue712",
+                        "macos": "\ue711",
+                        "manjaro": "\uf312",
+                        "mint": "\uf30f",
+                        "opensuse": "\uf314",
+                        "raspbian": "\uf315",
+                        "ubuntu": "\uf31c",
+                        "wsl": "\ue712",
+                        "wsl_separator": " on ",
+                        "windows": "\ue70f"
+                    }
+                },
+                {
+                    "type": "path",
+                    "style": "diamond",
+                    "properties": {
+                        "style": "full",
+                        "enable_hyperlink": true
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "time",
+                    "style": "diamond",
+                    "properties": {
+                        "time_format": "15:04:05",
+						"prefix": "[",
+                        "postfix": "]"
+                    }
+                },
+                {
+                    "type": "battery",
+                    "style": "diamond",
+                    "properties": {
+                        "discharging_icon": "\u21E3 ",
+                        "charging_icon": "\u21E1 ",
+                        "charged_icon": "\u25CF ",
+                        "color_background": false,
+                        "charged_color": "#4caf50",
+                        "charging_color": "#40c4ff",
+                        "discharging_color": "#ff5722",
+                        "prefix": "",
+                        "postfix": "",
+                        "display_charging": true
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+            	{
+            		"type": "text",
+                    "style": "plain",
+                    "foreground": "#9B6BDF",
+                    "properties": {
+                        "text": "λ >"
+                    }
+            	}
+            ]
+        },
+        {
+            "type": "rprompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#FFCE5C",
+                    "properties": {
+                        "text": "<"
+                    }
+                },
+                {
+                    "type": "executiontime",
+                    "style": "plain",
+                    "foreground": "#FFCE5C",
+                    "properties": {
+                        "threshold": 500,
+                        "style": "roundrock",
+                        "postfix": "<#fafafa> \uf252 </>"
+                    }
+                }
+            ]
+        }
+    ]
+}

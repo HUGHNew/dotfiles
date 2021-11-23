@@ -1,0 +1,6 @@
+customization:
+    distribution_code_name: Weasel
+patch:
+    style:
+        horizontal: true
+        color_scheme: google

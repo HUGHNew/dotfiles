@@ -1,0 +1,14 @@
+patch:
+    "menu/page_size": 9
+    "switcher/hotkeys":  # 這個列表裏每項定義一個快捷鍵
+        - F4
+        - "Control+Shift+grave"
+    schema_list:
+        - schema: luna_pinyin_simp
+    ascii_composer/good_old_caps_lock: true
+    ascii_composer/switch_key:
+        Caps_Lock: clear
+        Shift_L: commit_code
+        Shift_R: inline_ascii
+        Control_L: inline_ascii
+        Control_R: noop

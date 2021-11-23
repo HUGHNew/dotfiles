@@ -1,3 +1,21 @@
+# copy from bashrc
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 alias g11='g++ -std=c++11'
 alias g14='g++ -std=c++14'
 alias gcl='git clone'
@@ -7,8 +25,6 @@ alias Install="sudo apt install"
 alias Update="sudo apt update"
 alias Upgrade="sudo apt upgrade"
 alias Remove="sudo apt remove"
-# Nginx alias
-alias Nginx="sudo nginx"
 
 
 # gitbook init
@@ -25,16 +41,31 @@ alias Chinese="trans :zh -no-ansi" # translate to Chinese
 alias English="trans :en -no-ansi" # translate to English
 
 
-host_ip="$(tail -n 1  /etc/resolv.conf|awk '{print $2}')"
+# host_ip="$(tail -n 1  /etc/resolv.conf|awk '{print $2}')"
 # export ALL_PROXY="http://$host_ip:7890"
-alias setproxy="\
-export all_proxy=http://$host_ip:7890;\
-export http_proxy=http://$host_ip:7890;\
-export https_proxy=http://$host_ip:7890;\
-"
-alias unsetproxy="\
-unset all_proxy;\
-unset http_proxy;\
-unset https_proxy;\
-"
+# alias setproxy="\
+# export all_proxy=http://$host_ip:7890;\
+# export http_proxy=http://$host_ip:7890;\
+# export https_proxy=http://$host_ip:7890;\
+# "
+# alias unsetproxy="\
+# unset all_proxy;\
+# unset http_proxy;\
+# unset https_proxy;\
+# "
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+alias -g .......='../../../../../..'
+alias -g ........='../../../../../../..'
+
+# prettyping
 alias ping="~/prettyping"
+
+alias Open="xdg-open"
+
+# for apps like this make the initial letter capital
+# flatpak apps
+alias Emacs="flatpak run org.gnu.emacs"
