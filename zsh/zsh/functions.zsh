@@ -25,7 +25,7 @@ function stop-proxy(){
     gsettings set org.gnome.system.proxy mode 'auto'
     var=$(ps | grep "clash" | awk '{print $1}')  #抓取clash的进程号
     kill -9 $var && echo "stop clash successfully!"
-    $(unset-proxy) && echo "unset all proxy variables"
+    unset-proxy && echo "unset all proxy variables"
 }
 function restart-proxy(){
     stop-proxy
@@ -37,5 +37,8 @@ function take {
 }
 function bombs {
     to_rm=$(pwd)
-    cd .. && rm -rf to_rm
+    cd .. && rm -rf $to_rm
+}
+function Typora {
+    touch $1 && typora $1
 }
