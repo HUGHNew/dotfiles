@@ -1,5 +1,5 @@
 #!/bin/bash
-# Dependencies: gnome-screenshot tesseract-orc imagemagick xclip
+# Dependencies: gnome-screenshot tesseract-ocr imagemagick xclip
 # may only works on Gnome
 
 # reference : <https://blog.csdn.net/weixin_39949673/article/details/111116693>

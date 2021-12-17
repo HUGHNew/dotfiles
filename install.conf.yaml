@@ -8,6 +8,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
+    ~/.xinitrc: xinitrc
     ~/.zsh: zsh/zsh
     ~/.zshrc: 
       path: zsh/zshrc

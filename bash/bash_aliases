@@ -69,3 +69,4 @@ alias Open="xdg-open"
 # for apps like this make the initial letter capital
 # flatpak apps
 alias Emacs="flatpak run org.gnu.emacs"
+alias Fiddle=electron-fiddle
