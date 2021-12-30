@@ -1,12 +1,14 @@
 #!/bin/bash
-mv ~/.gitconfig ~/.gitconfig.bak
-ln -sr ./git/gitconfig.local.symlink ~/.gitconfig
 
-mv ~/.vimrc ~/.vimrc.bak
-ln -sr ./vim/vimrc ~/.vimrc
-ln -sr ./vim/vim ~/.vim
+############################
+######### dotbot ###########
+if ! pip install dotbot;then
+    sudo apt install python3
+    pip install dotbot
+fi
+./install
+############################
 
-# bash
-ln -sr ./bash/bash_aliases ~/.bash_aliases
-
-ln -sr ./PoshThemes ~/.poshthemes
+for to_install in $(ls ./installer)
+do bash ./installer/$to_install
+done

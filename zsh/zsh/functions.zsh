@@ -16,13 +16,15 @@ function unset-proxy(){
     unset HTTPS_PROXY
     unset HTTP_PROXY
 }
+# network mode
+# manual|auto|none
 function start-proxy(){
     gsettings set org.gnome.system.proxy mode 'manual' #ubuntu网络模式配置为手动
     set-proxy && ${proxy_path}/clash -d ${proxy_path}/ &  #在后台执行clash客户端
     echo "start clash successfully!"  #启动成功的提示
 }
 function stop-proxy(){
-    gsettings set org.gnome.system.proxy mode 'auto'
+    gsettings set org.gnome.system.proxy mode 'none' # disable
     var=$(ps | grep "clash" | awk '{print $1}')  #抓取clash的进程号
     kill -9 $var && echo "stop clash successfully!"
     unset-proxy && echo "unset all proxy variables"
@@ -68,4 +70,15 @@ function bombs {
 }
 function Typora {
     touch $1 && typora $1
+}
+
+#############
+# bat & fzf #
+#############
+
+function batdiff() {
+    git diff --name-only --diff-filter=d | xargs bat --diff
+}
+function preview(){
+  fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 }
