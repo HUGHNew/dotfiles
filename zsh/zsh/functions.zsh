@@ -77,7 +77,7 @@ function Typora {
 #############
 
 function batdiff() {
-    git diff --name-only --diff-filter=d | xargs bat --diff
+  git diff --name-only --diff-filter=d | xargs bat --diff
 }
 function preview(){
   fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
