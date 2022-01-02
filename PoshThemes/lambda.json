@@ -16,9 +16,34 @@
                     "properties": {
                         "prefix": " \uE235 ",
                         "display_mode": "environment",
-                        "home_enabled":true
+                        "home_enabled": true,
+                        "display_version": false
                     }
                 },
+                {
+                    "type": "node",
+                    "style": "diamond",
+                    "foreground": "#7a7374",
+                    "properties": {
+                        "prefix": " \uE27f " //\uE255 \ue242 
+                    }
+                },
+                {
+                    "type": "time",
+                    "style": "diamond",
+                    "properties": {
+                        "time_format": "15:04:05",
+                        "prefix":"<#B5D279>[</>",
+                        "postfix":"<#B3E5E6>]</>"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
                 {
                     "type": "os",
                     "style": "diamond",
@@ -55,48 +80,17 @@
         },
         {
             "type": "prompt",
-            "alignment": "right",
-            "segments": [
-                {
-                    "type": "time",
-                    "style": "diamond",
-                    "properties": {
-                        "time_format": "15:04:05",
-						"prefix": "[",
-                        "postfix": "]"
-                    }
-                },
-                {
-                    "type": "battery",
-                    "style": "diamond",
-                    "properties": {
-                        "discharging_icon": "\u21E3 ",
-                        "charging_icon": "\u21E1 ",
-                        "charged_icon": "\u25CF ",
-                        "color_background": false,
-                        "charged_color": "#4caf50",
-                        "charging_color": "#40c4ff",
-                        "discharging_color": "#ff5722",
-                        "prefix": "",
-                        "postfix": "",
-                        "display_charging": true
-                    }
-                }
-            ]
-        },
-        {
-            "type": "prompt",
             "alignment": "left",
             "newline": true,
             "segments": [
-            	{
-            		"type": "text",
+                {
+                    "type": "text",
                     "style": "plain",
                     "foreground": "#9B6BDF",
                     "properties": {
                         "text": "λ >"
                     }
-            	}
+                }
             ]
         },
         {
