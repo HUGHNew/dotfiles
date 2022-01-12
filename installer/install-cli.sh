@@ -1,14 +1,16 @@
 #!/bin/bash
 
+alias Install="sudo apt install -y"
+
 # bat
-sudo apt install bat
+Install bat
 sudo ln -s /usr/bin/batcat /usr/local/sbin/bat
 
 # fzf
-sudo apt install fzf
+Install fzf
 
-sudo apt install translate-shell
+Install translate-shell
 # for graphics paste/pin
-sudo apt install flameshot
+Install flameshot
 # for proxy
-sudo apt install proxychains
+Install proxychains
