@@ -7,6 +7,7 @@ sudo apt install zsh-autosuggestions zsh-syntax-highlighting -y
 wget https://gitee.com/mirrors/oh-my-zsh/raw/master/plugins/extract/extract.plugin.zsh -O zsh-extract.zsh
 sudo mkdir /usr/share/zsh-extract 
 sudo cp zsh-extract.zsh /usr/share/zsh-extract
+sudo usermod -s /bin/zsh $(whoami)
 # lambda theme
 # seems it can't
 # sudo apt install zsh-theme-lambda -y

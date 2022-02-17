@@ -1,45 +1,17 @@
 # Created by newuser for 5.8
 # source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-extract/zsh-extract.zsh
-# The following lines were added by compinstall
-
-zstyle ':completion:*' group-name ''
-zstyle :compinstall filename $HOME'/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# import local files
-local ZSH_CONF=$HOME/.zsh
-source $ZSH_CONF/functions.zsh
-source $ZSH_CONF/bindings.zsh
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# settings for history
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=100000
-SAVEHIST=100000
-setopt ZLE
-setopt BANG_HIST                 # Treat the '!' character specially during expansion.
-setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
-# setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
-setopt SHARE_HISTORY             # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
-setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
-setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
-setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
-setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
-setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
-setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
-setopt NO_BEEP                    # Disable beeps
-unsetopt HIST_BEEP                 # Beep when accessing nonexistent history.
+# import local files
+local ZSH_CONF=$HOME/.zsh
+source $ZSH_CONF/functions.zsh
+source $ZSH_CONF/bindings.zsh
+source $ZSH_CONF/history.zsh
+source $ZSH_CONF/utility.zsh
+source $ZSH_CONF/tools-alias.zsh
 
 
 eval "$(oh-my-posh --init --shell zsh --config ~/.poshthemes/lambda.json)"
@@ -52,3 +24,8 @@ source /opt/conda/etc/profile.d/conda.sh
 
 # add go bin to path
 export PATH=$HOME/go/bin:$PATH
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

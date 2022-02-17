@@ -25,7 +25,8 @@ function start-proxy(){
 }
 function stop-proxy(){
     gsettings set org.gnome.system.proxy mode 'none' # disable
-    var=$(ps | grep "clash" | awk '{print $1}')  #抓取clash的进程号
+    # var=$(ps | grep "clash" | awk '{print $1}')  #抓取clash的进程号
+    var=$(ps -ef| grep -m1 "clash" | awk '{print $2}')  #抓取clash的进程号
     kill -9 $var && echo "stop clash successfully!"
     unset-proxy && echo "unset all proxy variables"
 }
