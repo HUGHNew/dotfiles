@@ -1,4 +1,5 @@
 patch:
+  "translator/dictionary": luna_pinyin.sogo
   "switches/@0/reset": 1  # 默认英文
   'speller/algebra':
     - erase/^xx$/                      # 第一行保留
