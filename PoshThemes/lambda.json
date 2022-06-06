@@ -25,7 +25,7 @@
                     "style": "diamond",
                     "foreground": "#7a7374",
                     "properties": {
-                        "prefix": " \uE27f " //\uE255 \ue242 
+                        "prefix": " \uE27f "
                     }
                 },
                 {
@@ -76,6 +76,19 @@
                         "enable_hyperlink": true
                     }
                 }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "battery",
+                    "style": "plain",
+                    "properties": {
+                      "template": "[{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}]%"
+                    }
+                  }
             ]
         },
         {
