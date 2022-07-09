@@ -1,5 +1,5 @@
 # Dotfiles
 
-fork from <https://github.com/imkiva/dotfiles> @imkiva
+build from scratch
 
-This repo is designed to keep my ubuntu settings (with a statup)
+For macOS only

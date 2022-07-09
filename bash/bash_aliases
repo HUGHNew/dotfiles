@@ -16,22 +16,5 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias g11='g++ -std=c++11'
-alias g14='g++ -std=c++14'
 alias gcl='git clone'
 alias gll='git pull'
-
-alias Install="sudo apt install"
-alias Update="sudo apt update"
-alias Upgrade="sudo apt upgrade"
-alias Remove="sudo apt remove"
-
-
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
-alias -g .......='../../../../../..'
-alias -g ........='../../../../../../..'
-
-alias Open="xdg-open"

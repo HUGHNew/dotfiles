@@ -1,5 +1,0 @@
-[user]
-	name = ${AUTHOR}
-	email = ${EMAIL}
-[core]
-	editor = vim

@@ -1,14 +1,14 @@
 #!/bin/bash
 
-############################
-######### dotbot ###########
-if ! pip install dotbot;then
-    sudo apt install python3
-    pip install dotbot
-fi
-./install
-############################
+#######################
+##                   ##
+## install homebrew  ##
+##                   ##
+#######################
 
-for to_install in $(ls ./installer)
-do bash ./installer/$to_install
-done
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# git clone from HUGHNew/dotfils:macOS
+# todo
+
+brew install --cask iterm2 rectangle
