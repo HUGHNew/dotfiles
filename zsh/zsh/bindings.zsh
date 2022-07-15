@@ -39,9 +39,14 @@ case "${TERM}" in
 esac
 
 # bind Up/Down Arrow
-
+# PRESS Ctrl+V then PRESS the key you want to know
+# eg. UpArrow : Ctrl+V UpArrow
 bindkey '^[OA' history-beginning-search-backward # fuzzy find history forward
 bindkey '^[OB' history-beginning-search-forward  # fuzzy find history backward
+
+# Maybe Up : ^[[A
+# bindkey '^[[A' history-beginning-search-backward # fuzzy find history forward
+# bindkey '^[[B' history-beginning-search-forward  # fuzzy find history backward
 
 
 # command-line() {
