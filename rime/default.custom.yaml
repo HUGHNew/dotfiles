@@ -5,6 +5,7 @@ patch:
         - "Control+Shift+grave"
     schema_list:
         - schema: luna_pinyin_simp
+        - schema: double_pinyin
     ascii_composer/good_old_caps_lock: true
     ascii_composer/switch_key:
         Caps_Lock: clear

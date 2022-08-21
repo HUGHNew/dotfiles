@@ -117,7 +117,18 @@
                     "style": "plain",
                     "foreground": "#9B6BDF",
                     "properties": {
-                        "text": "λ >"
+                        "text": "λ"
+                    }
+                },
+                {
+                    "type": "exit",
+                    "style": "plain",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}#ee2288{{ else }}#9B6BDF{{ end }}"
+                    ],
+                    "properties": {
+                        "prefix": "<#FFFFFF>[</>",
+                        "postfix": "<#FFFFFF>]</>"
                     }
                 }
             ]
@@ -127,21 +138,13 @@
             "alignment": "right",
             "segments": [
                 {
-                    "type": "text",
-                    "style": "plain",
-                    "foreground": "#FFCE5C",
-                    "properties": {
-                        "text": "<"
-                    }
-                },
-                {
                     "type": "executiontime",
                     "style": "plain",
                     "foreground": "#FFCE5C",
                     "properties": {
                         "threshold": 500,
                         "style": "roundrock",
-                        "postfix": "<#fafafa> \uf252 </>"
+                        "prefix":"< "
                     }
                 }
             ]

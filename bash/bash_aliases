@@ -35,3 +35,21 @@ alias -g .......='../../../../../..'
 alias -g ........='../../../../../../..'
 
 alias Open="xdg-open"
+
+####### copy & paste ######
+if command -v pbcopy >/dev/null 2>&1;then
+    alias Copy=pbcopy
+else
+    if command -v xclip >/dev/null 2>&1;then
+        alias Copy="xclip -sel clip"
+    fi
+fi
+
+if command -v pbpaste >/dev/null 2>&1;then
+    alias Paste=pbpaste
+else
+    if command -v xclip >/dev/null 2>&1;then
+        alias Paste="xclip -o"
+    fi
+fi
+###########################
