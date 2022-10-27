@@ -64,14 +64,3 @@ bindkey "\e\e" sudo-command-line                  # [Esc] [Esc] - insert "sudo" 
               LBUFFER="sudo $LBUFFER"
         fi
   }
-# proxychains
-bindkey "^\e" proxychains-command-line                  # [Ctrl] [Esc] - insert "proxychains" at beginning of line
-  zle -N proxychains-command-line
-  proxychains-command-line() {
-        [[ -z $BUFFER ]] && zle up-history
-        if [[ $BUFFER == proxychains\ * ]]; then
-              LBUFFER="${LBUFFER#proxychains }"
-        else
-              LBUFFER="proxychains $LBUFFER"
-        fi
-  }

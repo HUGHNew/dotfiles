@@ -83,3 +83,7 @@ function batdiff() {
 function preview(){
   fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 }
+
+function biff() {
+  diff $@|bat -l diff
+}
