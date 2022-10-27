@@ -9,3 +9,4 @@ done
 
 
 alias sicp="rlwrap scheme"
+alias pc=proxychains
