@@ -10,3 +10,9 @@ done
 
 alias sicp="rlwrap scheme"
 alias pc=proxychains
+alias ping=~/prettyping
+alias cat=bat
+alias ls=exa
+alias ztc="sudo zerotier-cli"
+
+alias gopy='cd ~/Code/Python'

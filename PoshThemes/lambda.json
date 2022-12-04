@@ -73,7 +73,7 @@
                     "style": "diamond",
                     "properties": {
                         "style": "full",
-                        "enable_hyperlink": true
+                        "enable_hyperlink": false
                     }
                 },
                 {
