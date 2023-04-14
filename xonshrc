@@ -1,0 +1,12 @@
+# XONSH WEBCONFIG START
+$PROMPT = '{env_name}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{RESET} {RED}{last_return_code_if_nonzero:[{BOLD_INTENSE_RED}{}{RED}] }{RESET}\n{INTENSE_RED}λ {RESET} '
+# XONSH WEBCONFIG END
+$TITLE = '{current_job:{} |: }{cwd} | xonsh'
+
+import warnings
+warnings.filterwarnings(
+    'ignore',
+#message='There is no current event loop',
+    category=DeprecationWarning,
+    module='prompt_toolkit',
+)
