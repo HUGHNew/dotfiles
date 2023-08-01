@@ -8,6 +8,7 @@
 	co = checkout
 	ci = commit
 	ss = status
+    cl = clone --depth 1
 	pick = cherry-pick
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset:%ae' --abbrev-commit
 [init]
