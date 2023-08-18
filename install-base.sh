@@ -1,3 +1,5 @@
+# zsh
+sudo apt-get install zsh zsh-autosuggestions zsh-syntax-highlighting
 # vim git wget
 sudo apt install vim git wget
 # exa bat htop

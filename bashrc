@@ -37,9 +37,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-for script in $(ls $HOME/.bash);do
-    source $HOME/.bash/$script
+for script in $(ls $HOME/.sh/*.{sh,bash});do
+    source $HOME/.sh/$script
 done
 
-eval "$(/home/hugh/miniconda3/bin/conda shell.bash hook)"
-. "$HOME/.cargo/env"

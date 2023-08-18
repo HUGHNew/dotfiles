@@ -9,7 +9,7 @@
 	ci = commit
 	ss = status
 	pick = cherry-pick
-    cl = clone --depth 1
+  cl = clone --depth 1
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset:%ae' --abbrev-commit
 [init]
 	defaultBranch = main
