@@ -2,6 +2,8 @@
 sudo apt install vim git wget
 # exa bat htop
 sudo apt install exa bat htop
+# zsh
+# sudo apt-get install zsh zsh-autosuggestions zsh-syntax-highlighting
 
 ### Rust ###
 #curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh

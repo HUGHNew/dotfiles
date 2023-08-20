@@ -65,7 +65,7 @@ filetype indent on
 autocmd BufNewFile *.sh,*.py exec ":call SetTitle()" 
 func SetTitle() 
 	if expand("%:e") == 'sh'
-		call setline(1,"\#!/bin/bash") 
+		call setline(1,"\#!/bin/sh") 
 		call append(line("."), "") 
 	elseif expand("%:e") == 'py'
 		call setline(1,"#!/usr/bin/env python")
