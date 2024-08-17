@@ -1,6 +1,6 @@
 #!/bin/bash
 # proxy enable on Gnome
-proxy_path="/home/$(whoami)/clash"
+proxy_path="$HOME/clash"
 function set-proxy(){
     export all_proxy="socks5://127.0.0.1:7891/"
     export http_proxy="http://127.0.0.1:7890/"
@@ -25,7 +25,6 @@ function gnome-manual() {
     gsettings set org.gnome.system.proxy.https port 7890
     gsettings set org.gnome.system.proxy.socks host localhost
     gsettings set org.gnome.system.proxy.socks port 7891
-
 }
 # network mode
 # manual|auto|none
