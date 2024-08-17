@@ -26,8 +26,10 @@ case "${TERM}" in
     # workaround for screen + xterm
     bindkey '\e[1~'   beginning-of-line   # home
     bindkey '\e[4~'   end-of-line         # end
+    bindkey '^[OA' history-beginning-search-backward # fuzzy find history forward
+    bindkey '^[OB' history-beginning-search-forward  # fuzzy find history backward
     ;;
-  screen)
+  screen*)
     bindkey '^[[1~'   beginning-of-line   # home
     bindkey '^[[4~'   end-of-line         # end
     bindkey '\e[3~'   delete-char         # delete
@@ -35,37 +37,28 @@ case "${TERM}" in
     bindkey '\eOd'    backward-word       # ctrl left
     bindkey '^[[1;5C' forward-word        # ctrl right
     bindkey '^[[1;5D' backward-word       # ctrl left
+    bindkey '^[[A' history-beginning-search-backward # fuzzy find history forward
+    bindkey '^[[B' history-beginning-search-forward  # fuzzy find history backward
     ;;
 esac
 
-# bind Up/Down Arrow
+# for fuzzy find history keybinding
 # PRESS Ctrl+V then PRESS the key you want to know
 # eg. UpArrow : Ctrl+V UpArrow
-bindkey '^[OA' history-beginning-search-backward # fuzzy find history forward
-bindkey '^[OB' history-beginning-search-forward  # fuzzy find history backward
-
-# Maybe Up : ^[[A
-# bindkey '^[[A' history-beginning-search-backward # fuzzy find history forward
-# bindkey '^[[B' history-beginning-search-forward  # fuzzy find history backward
 
 
-# command-line() {
-#       [[ -z $BUFFER ]] && zle up-history
-#       if [[ $BUFFER == $1\ * ]]; then
-#             LBUFFER="${LBUFFER#$1 }"
-#       else
-#             LBUFFER="$1 $LBUFFER"
-#       fi
-# }
+command-line() {
+  [[ -z $BUFFER ]] && zle up-history
+  if [[ $BUFFER == $1\ * ]]; then
+        LBUFFER="${LBUFFER#$1 }"
+  else
+        LBUFFER="$1 $LBUFFER"
+  fi
+}
+
 # sudo
-
 bindkey "\e\e" sudo-command-line                  # [Esc] [Esc] - insert "sudo" at beginning of line
   zle -N sudo-command-line
   sudo-command-line() {
-        [[ -z $BUFFER ]] && zle up-history
-        if [[ $BUFFER == sudo\ * ]]; then
-              LBUFFER="${LBUFFER#sudo }"
-        else
-              LBUFFER="sudo $LBUFFER"
-        fi
+        command-line "sudo"
   }
