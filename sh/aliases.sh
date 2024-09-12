@@ -17,16 +17,3 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# apt aliases
-alias Install="sudo apt install"
-alias Update="sudo apt update"
-alias Upgrade="sudo apt upgrade"
-alias Remove="sudo apt remove"
-
-
-######################
-## tools region
-######################
-[ command -v exa > /dev/null ] && alias ls=exa
-[ command -v batcat > /dev/null ] && alias cat=batcat

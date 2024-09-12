@@ -38,6 +38,6 @@ if ! shopt -oq posix; then
 fi
 
 for script in $(ls $HOME/.sh/*.{sh,bash});do
-    source $HOME/.sh/$script
+    source $script
 done
 
