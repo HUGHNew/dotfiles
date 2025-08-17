@@ -18,7 +18,7 @@ set ruler                " Show the current cursor position (line number, column
 set showcmd              " Show the partially typed command in the status line. / 在状态栏显示（部分输入的）命令。
 set laststatus=2         " Always show the status line (even if there's only one window). / 始终显示状态栏（即使只有一个窗口）。
 set number               " Show line numbers
-set relatetivenumber		 " Show relative line numbers
+set relativenumber		 " Show relative line numbers
 set cmdheight=2          " Set the height of the command line to 2 lines. / 设置命令行高度为 2 行。
 set showmatch            " Show the matching bracket when a bracket is typed. / 输入括号时显示匹配的括号。
 set matchtime=1          " The time in tenths of a second to show the matching bracket. / 显示匹配括号的时间（单位：十分之一秒）。
