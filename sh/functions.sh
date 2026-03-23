@@ -38,17 +38,9 @@ function unset-proxy() {
 }
 
 
-function pc() {
+function px() {
   set-proxy
-  if command -v proxychains 2>/dev/null; then
-    prefix=(proxychains -q)
-  elif command -v proxychains4 2>/dev/null; then
-    prefix=(proxychains4 -q)
-  else
-    prefix=()
-  fi
-
-  "${prefix[@]}" "$@"
+  $@
   unset-proxy
 }
 

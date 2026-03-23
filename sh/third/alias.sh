@@ -19,6 +19,7 @@ alias-if-exist zellij z
 alias-if-exist batcat bat
 alias-if-exist batcat cat 'batcat -p --paging=never'
 alias-if-exist numbat calc 'numbat -e'
+alias-if-exist proxychains pcs 'proxychains -q'
 
 alias foliate="flatpak run com.github.johnfactotum.Foliate"
 
