@@ -1,8 +1,10 @@
 # .sh, the common scripts first
 THIRD_PARTY_DIR=$(dirname $0)/third
+LOCAL_DIR=$(dirname $0)/local
 #[ -e $THIRD_PARTY_DIR ] || return
 if [[ $0 == "bash" ]];then
     THIRD_PARTY_DIR="$HOME/.sh/third"
+    LOCAL_DIR="$HOME/.sh/local"
     SHELL=bash # for bash usage from other shells
 fi
 
@@ -24,6 +26,11 @@ esac
 # shell-specific scripts last
 for et in sh $ext;do
     for script in $THIRD_PARTY_DIR/*.${et};do
+        [ -f $script ] && source $script
+    done
+done
+for et in sh $ext;do
+    for script in $LOCAL_DIR/*.${et};do
         [ -f $script ] && source $script
     done
 done

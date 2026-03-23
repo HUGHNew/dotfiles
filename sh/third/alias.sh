@@ -1,0 +1,21 @@
+function alias-if-exist {
+  if command -v $1 >/dev/null;then
+    alias_name="${$3:-$1}"
+    alias $2="$alias_name"
+  fi
+}
+
+###### docker #####
+alias yacd="docker run -p 1234:80 -d --name yacd --rm haishanh/yacd:latest"
+alias webs="docker run --name hugo -p 8080:80 -v $(pwd)/docs/.vuepress/dist:/usr/share/nginx/html:ro -d nginx:stable-alpine3.17-slim"
+
+###### misc  #####
+alias-if-exist exa ls
+alias-if-exist podman pm
+alias-if-exist zellij z
+alias-if-exist batcat bat
+alias-if-exist batcat cat 'batcat -p --paging=never'
+alias-if-exist numbat calc "numbat -e"
+
+alias foliate="flatpak run com.github.johnfactotum.Foliate"
+
