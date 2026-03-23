@@ -60,7 +60,6 @@ function takedir() {
 }
 
 function takeurl() {
-  local data thedir
   data="$(mktemp)"
   curl -L "$1" > "$data"
   tar xf "$data"

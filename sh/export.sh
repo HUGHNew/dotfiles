@@ -2,8 +2,8 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 function path_more() {
-    local target_path="$1"
-    local local_flag=$(dirname "$HOME")
+    target_path="$1"
+    local_flag=$(dirname "$HOME")
 
     [ -z "$target_path" ] && return 1
     [ ! -d "$target_path" ] && return 1

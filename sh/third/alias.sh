@@ -1,7 +1,10 @@
 function alias-if-exist {
-  if command -v $1 >/dev/null;then
-    alias_name="${$3:-$1}"
-    alias $2="$alias_name"
+  if command -v "$1" >/dev/null 2>&1; then
+    if [[ -n "$3" ]]; then
+      alias "$2"="$3"
+    else
+      alias "$2"="$1"
+    fi
   fi
 }
 
@@ -15,7 +18,7 @@ alias-if-exist podman pm
 alias-if-exist zellij z
 alias-if-exist batcat bat
 alias-if-exist batcat cat 'batcat -p --paging=never'
-alias-if-exist numbat calc "numbat -e"
+alias-if-exist numbat calc 'numbat -e'
 
 alias foliate="flatpak run com.github.johnfactotum.Foliate"
 

@@ -8,9 +8,6 @@ zstyle :compinstall filename $HOME'/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-autoload -U bashcompinit
-bashcompinit
+# autoload -U bashcompinit
+# bashcompinit
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
