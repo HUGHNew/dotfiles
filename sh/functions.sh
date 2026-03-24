@@ -5,7 +5,7 @@ PROXY_HOST=127.0.0.1
 function env-proxy(){
     export all_proxy="socks5://$PROXY_HOST:7891/"
     export http_proxy="http://$PROXY_HOST:7890/"
-    export https_proxy="https://$PROXY_HOST:7890/"
+    export https_proxy="http://$PROXY_HOST:7890/"
     export no_proxy="localhost,127.0.0.1/8,::1,*.cn,bilibili.com"
     export ALL_PROXY=$all_proxy
     export HTTPS_PROXY=$https_proxy
@@ -16,9 +16,11 @@ function env-unproxy(){
     unset all_proxy
     unset http_proxy
     unset https_proxy
+    unset no_proxy
     unset ALL_PROXY
     unset HTTPS_PROXY
     unset HTTP_PROXY
+    unset NO_PROXY
 }
 function git-proxy() {
     git config --global https.https://github.com.proxy https://$PROXY_HOST:7890

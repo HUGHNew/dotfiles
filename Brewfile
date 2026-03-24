@@ -1,6 +1,7 @@
 tap "oven-sh/bun"
 brew "aichat"
 brew "bandwhich"
+brew "duckdb"
 brew "fzf"
 brew "gdu"
 brew "glow"
