@@ -8,6 +8,19 @@
     "ANTHROPIC_AUTH_TOKEN": "sk-...",
     "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic"
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/claude.startup"
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "Bash(jq *)"

@@ -16,6 +16,8 @@ cp $repo/vimrc ~/.vimrc
 
 ##### claude code ##########
 [ -d ~/.claude ] || mkdir ~/.claude
-cp claude.settings.json ~/.claude/settings.json
-cp claude.statusline.py ~/.claude/statusline
+cp claude/user.settings.json ~/.claude/settings.json
+cp claude/project.settings.json ~/.claude/settings.project.json
+cp claude/statusline.py ~/.claude/statusline
+cp claude/startup.sh ~/.claude/claude.startup
 
