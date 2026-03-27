@@ -5,8 +5,8 @@ repo=$(dirname $0)
 ############################
 ###### shell config ########
 cp $repo/bashrc ~/.bashrc
-cp $repo/sh ~/.sh
 cp $repo/zshrc ~/.zshrc
+cp -r $repo/sh ~/.sh
 
 ###### git config ##########
 cp $repo/gitconfig ~/.gitconfig

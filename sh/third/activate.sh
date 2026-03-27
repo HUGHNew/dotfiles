@@ -1,11 +1,11 @@
 case "$(basename $SHELL)" in
   "bash")
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-    source <(fzf --bash)
+    [ -e /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+    command -v fzf 2>&1 && source <(fzf --bash)
   ;;
   "zsh")
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
-    source <(fzf --zsh)
+    [ -e /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+    command -v fzf 2>&1 && source <(fzf --zsh)
   ;;
   *);;
 esac
