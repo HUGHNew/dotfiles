@@ -13,10 +13,6 @@
       "Bash(jq *)"
     ],
     "deny": [
-      "Read(./.*)",
-      "Edit(./.*)",
-      "Read(./**/.*)",
-      "Edit(./**/.*)",
       "Read(/tmp/.*)",
       "Edit(/tmp/.*)",
       "Read(/tmp/**/.*)",
@@ -36,6 +32,7 @@
         "~/.gnupg",
         "~/.kube",
         "~/.npmrc",
+        "~/.pypirc",
         "~/.netrc",
         "/etc",
         "/usr/local/bin"
