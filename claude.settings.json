@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku",
+    "ANTHROPIC_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_AUTH_TOKEN": "sk-...",
+    "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(jq *)"
+    ],
+    "deny": [
+      "Read(./.*)",
+      "Edit(./.*)",
+      "Read(./**/.*)",
+      "Edit(./**/.*)",
+      "Read(/tmp/.*)",
+      "Edit(/tmp/.*)",
+      "Read(/tmp/**/.*)",
+      "Edit(/tmp/**/.*)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline"
+  },
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "denyWrite": [
+        "~/.ssh",
+        "~/.aws",
+        "~/.gnupg",
+        "~/.kube",
+        "~/.npmrc",
+        "~/.netrc",
+        "/etc",
+        "/usr/local/bin"
+      ],
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws",
+        "~/.kube",
+        "~/.gnupg"
+      ],
+      "allowRead": [
+        "/tmp",
+        "/home/linuxbrew/.linuxbrew",
+        "/usr/lib/go",
+        "/usr/local/go",
+        "/usr/bin",
+        "/lib",
+        "/lib64",
+        "/etc/resolv.conf"
+      ],
+      "allowWrite": [
+        "/tmp",
+        "~/go/pkg/mod",
+        "~/go/bin",
+        "~/.cache/go-build",
+        "~/.cache/uv",
+        "~/.local/share/uv"
+      ]
+    },
+    "excludedCommands": [
+      "git",
+      "docker",
+      "uv",
+      "brew"
+    ],
+    "network": {
+      "httpProxyPort": 7890,
+      "socksProxyPort": 7891,
+      "allowedDomains": [
+        "*.edu.cn",
+        "github.com",
+        "api.github.com",
+        "objects.githubusercontent.com",
+        "pypi.org",
+        "files.pythonhosted.org",
+        "*.golang.org"
+      ]
+    }
+  },
+  "effortLevel": "medium"
+}

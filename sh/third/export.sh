@@ -10,8 +10,9 @@ export OLLAMA_MODELS=$HOME/ModelSpace/Ollama
 
 #### UV ########
 export UV_LINK_MODE=hardlink
-export UV_PYTHON="3.11"
-#export UV_INDEX_URL="https://mirrors.ustc.edu.cn/pypi/simple"
+export UV_PYTHON="3.12"
+export UV_HTTP_TIMEOUT=120
+export UV_INDEX_URL="https://mirrors.ustc.edu.cn/pypi/simple"
 
 
 #### BREW ######
@@ -28,6 +29,7 @@ export HOMEBREW_BAT=1
 #### Claude Code ####
 export API_TIMEOUT_MS=600000
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+export DISABLE_INSTALLATION_CHECKS=1
 
 #export ANTHROPIC_AUTH_TOKEN=ollama
 #export ANTHROPIC_BASE_URL=http://localhost:11434
