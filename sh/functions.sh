@@ -1,29 +1,51 @@
 #!/bin/bash
-# proxy enable on Gnome
-proxy_path="$HOME/clash"
-function set-proxy(){
-    export all_proxy="socks5://127.0.0.1:7891/"
-    export http_proxy="http://127.0.0.1:7890/"
-    export https_proxy="http://127.0.0.1:7890/"
-    export ALL_PROXY="socks5://127.0.0.1:7891/"
-    export HTTPS_PROXY="http://127.0.0.1:7890/"
-    export HTTP_PROXY="http://127.0.0.1:7890/"
+PROXY_HOST=127.0.0.1
+
+# proxy functions
+function env-proxy(){
+    export all_proxy="socks5://$PROXY_HOST:7891/"
+    export http_proxy="http://$PROXY_HOST:7890/"
+    export https_proxy="http://$PROXY_HOST:7890/"
+    export no_proxy="localhost,$PROXY_HOST/8,::1,*.cn"
+    export ALL_PROXY=$all_proxy
+    export HTTPS_PROXY=$https_proxy
+    export HTTP_PROXY=$http_proxy
+    export NO_PROXY=$no_proxy
 }
-function unset-proxy(){
+function env-unproxy(){
     unset all_proxy
     unset http_proxy
     unset https_proxy
+    unset no_proxy
     unset ALL_PROXY
     unset HTTPS_PROXY
     unset HTTP_PROXY
+    unset NO_PROXY
+}
+function git-proxy() {
+    git config --global https.https://github.com.proxy https://$PROXY_HOST:7890
+    git config --global http.https://github.com.proxy http://$PROXY_HOST:7890
+}
+function git-unproxy() {
+    git config --unset --global https.https://github.com.proxy
+    git config --unset --global http.https://github.com.proxy
 }
 
-function pc () {
-  # substitute for proxychains
+
+function set-proxy() {
+  env-proxy && git-proxy
+}
+function unset-proxy() {
+  env-unproxy && git-unproxy
+}
+
+function px() {
   set-proxy
   $@
   unset-proxy
 }
+
+
 # take functions
 
 # mkcd is equivalent to takedir

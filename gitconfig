@@ -21,3 +21,6 @@
 	algorithm = histogram
 [merge]
 	conflictstyle = zdiff3
+[user]
+	email = hugh.lpd@gmail.com
+	name = Hugh

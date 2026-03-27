@@ -1,7 +1,8 @@
 # settings for history
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=1000000
-SAVEHIST=1000000
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=16384
+export SAVEHIST=1048576
+export HISTORY_IGNORE="(cd|ls|pwd|exit|clear|history|man*|which*)"
 setopt ZLE
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
@@ -16,5 +17,4 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt NO_BEEP                   # Disable beeps
-unsetopt HIST_BEEP               # Beep when accessing nonexistent history.
 setopt interactivecomments       # allow # as comment in interative zsh
