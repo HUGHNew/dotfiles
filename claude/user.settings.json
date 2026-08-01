@@ -1,12 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/claude-code-settings.json",
     "env": {
-        "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus",
-        "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet",
-        "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku",
-        "ANTHROPIC_MODEL": "MiniMax-M2.7",
-        "ANTHROPIC_AUTH_TOKEN": "sk-...",
-        "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic"
+        "ANTHROPIC_AUTH_TOKEN": "sk-..."
     },
     "hooks": {
         "SessionStart": [
@@ -21,43 +16,51 @@
             }
         ]
     },
-    "permissions": {
-        "allow": [
-            "Bash(jq *)"
-        ],
-        "deny": [
-            "Read(/tmp/.*)",
-            "Edit(/tmp/.*)",
-            "Read(/tmp/**/.*)",
-            "Edit(/tmp/**/.*)"
-        ]
+    "attribution": {
+        "commit": "",
+        "pr": ""
     },
     "statusLine": {
         "type": "command",
         "command": "~/.claude/statusline"
     },
+    "permissions": {
+        "allow": [
+            "Bash(~/.local/bin/*)",
+            "Bash(/opt/homebrew/bin/*)"
+        ],
+        "deny": [
+            "Read(~/.ssh/**)",
+            "Read(~/.gnupg/**)",
+            "Bash(sudo *)",
+            "Bash(rm -rf *)"
+        ]
+    },
     "sandbox": {
         "enabled": true,
         "filesystem": {
-            "denyWrite": [
-                "~",
-                "/etc",
-                "/opt/",
-                "/usr/bin"
+            "allowRead": [
+                "~/.local/bin",
+                "/opt/homebrew/bin"
             ],
             "denyRead": [
-                "~"
+                "~/.ssh",
+                "~/.gnupg",
+                "~/.npmrc",
+                "~/.pypirc",
+                "~/.gitconfig",
+                "~/.zsh_history",
+                "~/.bash_history"
+            ],
+            "denyWrite": [
+                "~/.ssh",
+                "~/.gnupg",
+                "~/.claude/settings.json"
             ]
         },
-        "excludedCommands": [
-            "git",
-            "uv",
-            "brew"
-        ],
         "network": {
             "httpProxyPort": 7890,
-            "socksProxyPort": 7891
+            "socksProxyPort": 7890
         }
-    },
-    "effortLevel": "medium"
+    }
 }

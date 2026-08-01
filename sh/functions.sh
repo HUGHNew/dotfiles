@@ -1,11 +1,12 @@
 #!/bin/bash
 PROXY_HOST=127.0.0.1
+PROXY_PORT=7890
 
 # proxy functions
 function env-proxy(){
-    export all_proxy="socks5://$PROXY_HOST:7891/"
-    export http_proxy="http://$PROXY_HOST:7890/"
-    export https_proxy="http://$PROXY_HOST:7890/"
+    export all_proxy="socks5://$PROXY_HOST:$PROXY_PORT/"
+    export http_proxy="http://$PROXY_HOST:$PROXY_PORT/"
+    export https_proxy="http://$PROXY_HOST:$PROXY_PORT/"
     export no_proxy="localhost,$PROXY_HOST/8,::1,*.cn"
     export ALL_PROXY=$all_proxy
     export HTTPS_PROXY=$https_proxy
@@ -23,8 +24,8 @@ function env-unproxy(){
     unset NO_PROXY
 }
 function git-proxy() {
-    git config --global https.https://github.com.proxy https://$PROXY_HOST:7890
-    git config --global http.https://github.com.proxy http://$PROXY_HOST:7890
+    git config --global https.https://github.com.proxy https://$PROXY_HOST:$PROXY_PORT
+    git config --global http.https://github.com.proxy http://$PROXY_HOST:$PROXY_PORT
 }
 function git-unproxy() {
     git config --unset --global https.https://github.com.proxy

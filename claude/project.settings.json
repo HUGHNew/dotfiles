@@ -3,31 +3,38 @@
   "sandbox": {
     "filesystem": {
       "allowRead": [
-        "./"
+        "./**"
       ],
       "allowWrite": [
-        "./"
+        "./**"
+      ],
+      "denyRead": [
+        "./.env",
+        "./.env.*",
+        "./.claude/*.local.*"
       ]
     }
   },
   "permissions": {
     "ask": [
-      "Bash(git push *)",
-      "Bash(git reset --hard *)"
+      "Bash(git push *)"
     ],
     "allow": [
-      "Bash(git *)",
-      "Bash(uv *)"
+      "Read(./**)",
+      "Edit(./**)",
+      "Write(./**)",
+      "Bash(~/.local/bin/*)",
+      "Bash(.venv/bin/python *)",
+      "Bash(/opt/homebrew/bin/*)"
     ],
     "deny": [
-      "Read(./.env*)",
-      "Edit(./.env*)",
-      "Read(./**/.env*)",
-      "Edit(./**/.env*)",
+      "Bash(python *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Write(./.env)",
+      "Write(./.env.*)",
       "Read(./secrets/**)",
-      "Edit(./secrets/**)",
-      "Read(./.git/config)",
-      "Edit(./.git/config)"
+      "Write(./secrets/**)"
     ]
   }
 }

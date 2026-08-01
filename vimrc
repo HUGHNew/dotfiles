@@ -29,8 +29,8 @@ set shortmess=atI     	 " Shorten some messages (e.g., startup messages, intro m
 set autoindent           " Automatically indent new lines based on the previous line. / 根据前一行自动缩进新行。
 set cindent              " Enable C-style indentation for C/C++ files. / 启用 C/C++ 风格的缩进。
 set tabstop=4            " Set the width of a tab character to 4 spaces. / 设置制表符的宽度为 4 个空格。
-" set expandtab          " Convert tabs to spaces when you press the Tab key. / 按 Tab 键时将制表符转换为空格。
-" set softtabstop=4      " Defines the number of spaces a <Tab> counts for when editing. / 定义在编辑时 <Tab> 键代表的空格数。
+set expandtab            " Convert tabs to spaces when you press the Tab key. / 按 Tab 键时将制表符转换为空格。
+set softtabstop=4        " Defines the number of spaces a <Tab> counts for when editing. / 定义在编辑时 <Tab> 键代表的空格数。
 set shiftwidth=4         " Set the number of spaces for (auto)indenting and '<<' or '>>' commands. / 设置缩进和 '<<' 或 '>>' 命令的空格数。
 set smarttab             " Smarter tab behavior, especially for leading spaces. / 更智能的 Tab 行为，特别是对于行首空格。
 
