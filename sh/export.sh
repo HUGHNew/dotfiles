@@ -17,6 +17,8 @@ function path_more() {
 path_more $HOME/.local/bin
 ###################
 
+export DO_NOT_TRACK=1
+
 #### RUST #######
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
@@ -59,5 +61,3 @@ export AICHAT_CONFIG_DIR=~/.config/aichat
 #export XDG_CONFIG_HOME=~/.config
 
 #### MinerU ####
-export MINERU_MODEL_SOURCE=modelscope
-export MINERU_API_OUTPUT_ROOT=./mineresult

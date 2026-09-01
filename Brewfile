@@ -1,43 +1,48 @@
-brew "aichat"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-brew "claude-code"
-brew "cmake"
-brew "doxx"
+# Diff that understands syntax
+brew "difftastic"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
-brew "ffmpeg"
+# Fast and simple Node.js version manager
 brew "fnm"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Disk usage analyzer with console interface written in Go
 brew "gdu"
+# GitHub command-line tool
 brew "gh"
-brew "htop"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
-brew "libomp"
+# Linux virtual machines
 brew "lima"
-brew "numbat"
-brew "ollama"
-brew "scmpuff"
+# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-brew "tldr"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
-brew "zeroclaw"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-cask "alt-tab"
+# Continuation of Clash Verge - A Clash Meta GUI based on Tauri
 cask "clash-verge-rev"
-cask "feishu"
+# User-friendly mono font
 cask "font-fira-code"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
 cask "google-chrome"
-cask "keka"
+# Customise mouse behavior
 cask "linearmouse"
-cask "localsend"
-cask "macfuse"
-cask "qq"
-cask "steam"
-cask "tencent-meeting"
+# Open-source code editor
 cask "visual-studio-code"
-cask "wechat"
-cask "wezterm"
+# Multiplayer code editor
 cask "zed"
 vscode "adpyke.codesnap"
 vscode "astral-sh.ty"

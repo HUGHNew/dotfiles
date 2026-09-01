@@ -65,7 +65,7 @@ function takeurl() {
 }
 
 function takegit() {
-  git clone "$1"
+  git clone --depth 1 "$1"
   cd "$(basename ${1%%.git})"
 }
 
